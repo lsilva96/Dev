@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://app.omie.com.br/api/v1/geral/clientes/?WSDL">
+   <soapenv:Header>
+      <app_key>9884378119</app_key>
+      <app_secret>d26a64b7ce3542bf7c1ef8469320b29d</app_secret>
+   </soapenv:Header>
+   <soapenv:Body>
+      <wsdl:ConsultarCliente soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <clientes_cadastro_chave xsi:type="wsdl:clientes_cadastro_chave">
+            <codigo_cliente_omie xsi:type="xsd:integer"></codigo_cliente_omie>
+            <codigo_cliente_integracao xsi:type="xsd:string">A125</codigo_cliente_integracao>
+         </clientes_cadastro_chave>
+      </wsdl:ConsultarCliente>
+   </soapenv:Body>
+</soapenv:Envelope>

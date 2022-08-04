@@ -1,0 +1,3 @@
+function main()
+ QOut( "Hello World" )
+return nil

@@ -1,0 +1,41 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://app.omie.com.br/api/v1/geral/clientes/?WSDL">
+   <soapenv:Header>
+      <app_key>9884378119</app_key>
+      <app_secret>d26a64b7ce3542bf7c1ef8469320b29d</app_secret>
+   </soapenv:Header>
+   <soapenv:Body>
+      <wsdl:AlterarCliente soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <clientes_cadastro xsi:type="wsdl:clientes_cadastro">
+            <codigo_cliente_omie xsi:type="xsd:integer"></codigo_cliente_omie>
+            <codigo_cliente_integracao xsi:type="xsd:string">A125</codigo_cliente_integracao>
+            <cnpj_cpf xsi:type="xsd:string"></cnpj_cpf>
+            <razao_social xsi:type="xsd:string"></razao_social>
+            <nome_fantasia xsi:type="xsd:string"></nome_fantasia>
+            <logradouro xsi:type="xsd:string"></logradouro>
+            <endereco xsi:type="xsd:string"></endereco>
+            <endereco_numero xsi:type="xsd:string"></endereco_numero>
+            <complemento xsi:type="xsd:string"></complemento>
+            <bairro xsi:type="xsd:string"></bairro>
+            <cidade xsi:type="xsd:string"></cidade>
+            <estado xsi:type="xsd:string"></estado>
+            <cep xsi:type="xsd:string">135244999</cep>
+            <codigo_pais xsi:type="xsd:string"></codigo_pais>
+            <contato xsi:type="xsd:string"></contato>
+            <telefone1_ddd xsi:type="xsd:string"></telefone1_ddd>
+            <telefone1_numero xsi:type="xsd:string"></telefone1_numero>
+            <telefone2_ddd xsi:type="xsd:string"></telefone2_ddd>
+            <telefone2_numero xsi:type="xsd:string"></telefone2_numero>
+            <fax_ddd xsi:type="xsd:string"></fax_ddd>
+            <fax_numero xsi:type="xsd:string"></fax_numero>
+            <email xsi:type="xsd:string"></email>
+            <homepage xsi:type="xsd:string"></homepage>
+            <observacao xsi:type="xsd:string">Teste de alteração.</observacao>
+            <inscricao_municipal xsi:type="xsd:string"></inscricao_municipal>
+            <inscricao_estadual xsi:type="xsd:string"></inscricao_estadual>
+            <inscricao_suframa xsi:type="xsd:string"></inscricao_suframa>
+            <pessoa_fisica xsi:type="xsd:string"></pessoa_fisica>
+            <optante_simples_nacional xsi:type="xsd:string"></optante_simples_nacional>
+         </clientes_cadastro>
+      </wsdl:AlterarCliente>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,199 @@
+#line 112 "C:\xHB\include\hbclass.ch"
+   DYNAMIC DivertConstructorCall
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DECLARE HBClass  New( cName AS String, OPTIONAL SuperParams ) AS CLASS HBClass  Create() AS Object  Instance() AS Object  AddClsMethod( cName AS String, @MethodName(), nScope AS Numeric, n2 AS Numeric, n3 AS Numeric )  AddDelegate( cName AS String, cDelegate AS String, cObject AS String, nScope AS Numeric, lPersistent AS LOGICAL )  AddMultiClsData( cType AS String, uVal, nScope AS Numeric, aDatas AS Array OF String )  AddMultiData( cType AS String, uVal, nScope AS Numeric, aDatas AS Array OF String, x AS LOGICAL, lPer AS LOGICAL )  AddMethod( cName AS String, @MethodName(), nScope AS Numeric, lPersistent AS LOGICAL )  AddInLine( cName AS String, bBlock AS CodeBlock, nScope AS Numeric, lPersistent AS LOGICAL )  AddVirtual( cName AS String )  ModMethod( cName AS String, @MethodName(), nScope AS Numeric, lPersistent AS LOGICAL )  ModClsMethod( cName AS String, @MethodName(), nScope AS Numeric )  ModInline( cName AS String, bBlock AS CodeBlock, nScope AS Numeric, lPersistent AS LOGICAL )  SetOnError( @MethodName() )
+#line 63 "D:\nwg\dsv\others\xhbws\source\url.prg"
+_HB_CLASS tURLSSL ; UTILITY FUNCTION tURLSSL(...); static s_oClass ; local oClassInstance ; local nScope ; nScope := 1 ; if s_oClass == NIL ; s_oClass := IIF(.F.,, HBClass():New( "tURLSSL" , { HBObject():Classh } ) ) ;
+   _HB_MEMBER { cAddress} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cAddress" }, .F., .F. ), )
+   _HB_MEMBER { cProto} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cProto" }, .F., .F. ), )
+   _HB_MEMBER { cServer} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cServer" }, .F., .F. ), )
+   _HB_MEMBER { cPath} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cPath" }, .F., .F. ), )
+   _HB_MEMBER { cQuery} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cQuery" }, .F., .F. ), )
+   _HB_MEMBER { cFile} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cFile" }, .F., .F. ), )
+   _HB_MEMBER { nPort} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "nPort" }, .F., .F. ), )
+   _HB_MEMBER { cUserid} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cUserid" }, .F., .F. ), )
+   _HB_MEMBER { cPassword} ; IIF( !.F., s_oClass:AddMultiData(,, nScope + IIF( .F., 32, 0 ), { "cPassword" }, .F., .F. ), )
+
+   _HB_MEMBER New( cUrl); IIF( .F., s_oClass:ModMethod( "New", @tURLSSL_New(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ), s_oClass:AddMethod( "New", @tURLSSL_New(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ));
+   _HB_MEMBER SetAddress( cUrl); IIF( .F., s_oClass:ModMethod( "SetAddress", @tURLSSL_SetAddress(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ), s_oClass:AddMethod( "SetAddress", @tURLSSL_SetAddress(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ));
+   _HB_MEMBER BuildAddress(); IIF( .F., s_oClass:ModMethod( "BuildAddress", @tURLSSL_BuildAddress(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ), s_oClass:AddMethod( "BuildAddress", @tURLSSL_BuildAddress(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ));
+   _HB_MEMBER BuildQuery(); IIF( .F., s_oClass:ModMethod( "BuildQuery", @tURLSSL_BuildQuery(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ), s_oClass:AddMethod( "BuildQuery", @tURLSSL_BuildQuery(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ));
+   _HB_MEMBER AddGetForm( cPostData); IIF( .F., s_oClass:ModMethod( "AddGetForm", @tURLSSL_AddGetForm(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ), s_oClass:AddMethod( "AddGetForm", @tURLSSL_AddGetForm(), nScope + IIF( .F., 16, 0 ) + IIF( .F., 1024, 0 ), .F. ));
+
+nScope := 8
+   _HB_MEMBER { cREuri} ; IIF( !.F., s_oClass:AddMultiClsData(, HB_RegexComp("(?:(.*)://)?([^?/]*)(/[^?]*)?\??(.*)"), nScope + IIF( .F., 32, 0 ) + 64, { "cREuri" }, .F. ), )
+   _HB_MEMBER { cREServ} ; IIF( !.F., s_oClass:AddMultiClsData(, HB_RegexComp("(?:([^:@]*):?([^@:]*)@|)([^:]+):?(.*)"), nScope + IIF( .F., 32, 0 ) + 64, { "cREServ" }, .F. ), )
+   _HB_MEMBER { cREFile} ; IIF( !.F., s_oClass:AddMultiClsData(, HB_RegexComp("^((?:/.*/)|/)*(.*)$"), nScope + IIF( .F., 32, 0 ) + 64, { "cREFile" }, .F. ), )
+
+; IF .F. ; __clsActive(s_oClass:hClass) ; s_oClass:Refresh() ; ELSE ; s_oClass:Create() ; END ; oClassInstance := __clsInst( s_oClass:hClass ) ; IF __ObjHasMsg( oClassInstance, "InitClass" ); oClassInstance:InitClass( hb_aParams() ) ; END ; ELSE ; oClassInstance := __clsInst( s_oClass:hClass ) ; END ; IF PCount() > 0 ; DIVERT TO (@DivertConstructorCall()) OF s_oClass ; END ; RETURN oClassInstance AS CLASS tURLSSL ;
+
+
+UTILITY STATIC function tURLSSL_New( cUrl) ; local Self AS CLASS tURLSSL := QSelf() AS CLASS tURLSSL
+   ::SetAddress( cUrl )
+RETURN Self
+
+
+UTILITY STATIC function tURLSSL_SetAddress( cUrl) ; local Self AS CLASS tURLSSL := QSelf() AS CLASS tURLSSL
+   LOCAL aMatch, cServer, cPath
+
+   ::cAddress := ""
+   ::cProto := ""
+   ::cUserid := ""
+   ::cPassword := ""
+   ::cServer := ""
+   ::cPath := ""
+   ::cQuery := ""
+   ::cFile := ""
+   ::nPort := -1
+
+   IF Empty( cUrl ) .OR. Len( cUrl ) == 0
+      RETURN .T.
+   ENDIF
+
+
+   aMatch:= HB_Regex( ::cREuri, cUrl )
+
+
+   IF Empty( aMatch )
+      RETURN .F.
+   ENDIF
+
+   ::cProto := Lower( aMatch[2] )
+   cServer := aMatch[3]
+   cPath := aMatch[4]
+   ::cQuery := aMatch[5]
+
+
+   aMatch := HB_Regex( ::cREServ, cServer )
+   ::cUserId := aMatch[2]
+   ::cPassword := aMatch[3]
+   ::cServer := aMatch[4]
+   ::nPort := Val(aMatch[5])
+   IF ::nPort < 1
+      ::nPort := -1
+   ENDIF
+
+
+   aMatch := HB_Regex( ::cREFile, cPath )
+   ::cPath := aMatch[2]
+   ::cFile := aMatch[3]
+
+RETURN .T.
+
+
+UTILITY STATIC function tURLSSL_BuildAddress() ; local Self AS CLASS tURLSSL := QSelf() AS CLASS tURLSSL
+   LOCAL cRet := ""
+
+   IF ::cProto <> NIL
+      ::cProto := Lower( ::cProto )
+   ENDIF
+
+   IF ! Empty( ::cProto ) .AND. ! Empty( ::cServer )
+      cRet := ::cProto + "://"
+   ENDIF
+
+   IF ! Empty( ::cUserid )
+      cRet += ::cUserid
+      IF ! Empty( ::cPassword )
+         cRet+= ":" + ::cPassword
+      ENDIF
+      cRet += "@"
+   ENDIF
+
+   IF ! Empty( ::cServer )
+      cRet += ::cServer
+      IF ::nPort > 0
+         cRet += ":" + AllTrim( Str( ::nPort ) )
+      ENDIF
+   ENDIF
+
+   IF Len( ::cPath ) == 0 .OR. ::cPath[-1] <> "/"
+      ::cPath += "/"
+   ENDIF
+
+   cRet += ::cPath + ::cFile
+   IF ! Empty( ::cQuery )
+      cRet += "?" + ::cQuery
+   ENDIF
+
+   IF Len( cRet ) == 0
+      cRet := NIL
+   ELSE
+      ::cAddress := cRet
+   ENDIF
+
+RETURN cRet
+
+UTILITY STATIC function tURLSSL_BuildQuery() ; local Self AS CLASS tURLSSL := QSelf() AS CLASS tURLSSL
+   LOCAL cLine
+
+   IF Len( ::cPath ) == 0 .OR. ::cPath[-1] <> "/"
+      ::cPath += "/"
+   ENDIF
+
+   cLine := ::cPath + ::cFile
+   IF ! Empty( ::cQuery )
+      cLine += "?" + ::cQuery
+   ENDIF
+
+RETURN cLine
+
+UTILITY STATIC function tURLSSL_AddGetForm( cPostData) ; local Self AS CLASS tURLSSL := QSelf() AS CLASS tURLSSL
+   LOCAL cData:="", nI, cTmp,y, cRet
+
+   IF HB_IsHash( cPostData )
+      FOR nI := 1 TO Len( cPostData )
+         cTmp := HGetKeyAt( cPostData, nI )
+         cTmp := CStr( cTmp )
+         cTmp := AllTrim( cTmp )
+         cTmp := TipEncoderUrl_Encode( cTmp )
+         cData += cTmp +"="
+         cTmp := HGetValueAt( cPostData, nI )
+         cTmp := CStr( cTmp )
+         cTmp := AllTrim( cTmp )
+         cTmp := TipEncoderUrl_Encode( cTmp )
+         cData += cTmp + "&"
+      NEXT
+      cData[-1] = ""
+   elseIF HB_IsArray( cPostData )
+      y:=Len(cPostData)
+      FOR nI := 1 TO y
+         cTmp := cPostData[ nI ,1]
+         cTmp := CStr( cTmp )
+         cTmp := AllTrim( cTmp )
+         cTmp := TipEncoderUrl_Encode( cTmp )
+         cData += cTmp +"="
+         cTmp := cPostData[ nI,2]
+         cTmp := CStr( cTmp )
+         cTmp := AllTrim( cTmp )
+         cTmp := TipEncoderUrl_Encode( cTmp )
+         cData += cTmp
+         IF nI<>y
+            cData+="&"
+         ENDIF
+      NEXT
+
+   ELSEIF HB_IsString( cPostData )
+      cData := cPostData
+   Endif
+
+   IF !empty(cData)
+      cRet := ::cQuery+=if(empty(::cQuery),"","&")+cData
+   ENDIF
+
+RETURN cRet

@@ -1,0 +1,33 @@
+
+Type: C >>>xhb.exe -o"objc32\omiews.c" -m -n -pOobjc32\ -q -gc0 -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""  -I"D:\nwg\dsv\others\xhbws\include" -I"D:\nwg\dsv\others\xhbws\include\openssl"  -I"C:\xHB\include" -I"C:\xHB\include\w32" "omiews.prg"<<<
+
+xHarbour Compiler build 1.2.1 (SimpLex) (Rev. 9438)
+Copyright 1999-2012, http://www.xharbour.org http://www.harbour-project.org/
+Generating object output to 'objc32\omiews.obj'...
+
+Type: C >>>xhb.exe -o"objc32\client.c" -m -n -pOobjc32\ -q -gc0 -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""  -I"D:\nwg\dsv\others\xhbws\include" -I"D:\nwg\dsv\others\xhbws\include\openssl"  -I"C:\xHB\include" -I"C:\xHB\include\w32" "D:\nwg\dsv\others\xhbws\source\client.prg"<<<
+
+xHarbour Compiler build 1.2.1 (SimpLex) (Rev. 9438)
+Copyright 1999-2012, http://www.xharbour.org http://www.harbour-project.org/
+Generating object output to 'objc32\client.obj'...
+
+Type: C >>>xhb.exe -o"objc32\httpcln.c" -m -n -pOobjc32\ -q -gc0 -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""  -I"D:\nwg\dsv\others\xhbws\include" -I"D:\nwg\dsv\others\xhbws\include\openssl"  -I"C:\xHB\include" -I"C:\xHB\include\w32" "D:\nwg\dsv\others\xhbws\source\httpcln.prg"<<<
+
+xHarbour Compiler build 1.2.1 (SimpLex) (Rev. 9438)
+Copyright 1999-2012, http://www.xharbour.org http://www.harbour-project.org/
+Generating object output to 'objc32\httpcln.obj'...
+
+Type: C >>>xhb.exe -o"objc32\url.c" -m -n -pOobjc32\ -q -gc0 -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""  -I"D:\nwg\dsv\others\xhbws\include" -I"D:\nwg\dsv\others\xhbws\include\openssl"  -I"C:\xHB\include" -I"C:\xHB\include\w32" "D:\nwg\dsv\others\xhbws\source\url.prg"<<<
+
+xHarbour Compiler build 1.2.1 (SimpLex) (Rev. 9438)
+Copyright 1999-2012, http://www.xharbour.org http://www.harbour-project.org/
+Generating object output to 'objc32\url.obj'...
+
+Type: C >>>xcc.exe -Fo"objc32\inetssl.obj" -Ot  -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""  -I"D:\nwg\dsv\others\xhbws\include" -I"D:\nwg\dsv\others\xhbws\include\openssl" -I"C:\xHB\include" -I"C:\xHB\c_include" -I"C:\xHB\c_include\win" -I"C:\xHB\c_include\msvc" "D:\nwg\dsv\others\xhbws\source\inetssl.c"<<<
+
+
+Type: C >>>xcc.exe -Fo"objc32\sign.obj" -Ot  -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""  -I"D:\nwg\dsv\others\xhbws\include" -I"D:\nwg\dsv\others\xhbws\include\openssl" -I"C:\xHB\include" -I"C:\xHB\c_include" -I"C:\xHB\c_include\win" -I"C:\xHB\c_include\msvc" "D:\nwg\dsv\others\xhbws\source\sign.c"<<<
+
+
+Type: C >>>xlink.exe -NOEXPOBJ -MAP -FORCE:MULTIPLE -NOIMPLIB -subsystem:console -LIBPATH:"C:\xHB\lib" -LIBPATH:"C:\xHB\c_lib" -LIBPATH:"C:\xHB\c_lib\win"  "objc32\omiews.obj" "objc32\client.obj" "objc32\httpcln.obj" "objc32\url.obj" "objc32\inetssl.obj" "objc32\sign.obj" "D:\nwg\dsv\others\xhbws\lib\libeay32.lib" "D:\nwg\dsv\others\xhbws\lib\libxml2.lib" "D:\nwg\dsv\others\xhbws\lib\libxmlsec.lib" "D:\nwg\dsv\others\xhbws\lib\libxmlsec-mscrypto.lib" "D:\nwg\dsv\others\xhbws\lib\libxmlsec-openssl.lib" "D:\nwg\dsv\others\xhbws\lib\libxslt.lib" "D:\nwg\dsv\others\xhbws\lib\ssleay32.lib" "sql.lib" "ace32.lib" "xhb.lib" "dbf.lib" "nsx.lib" "ntx.lib" "cdx.lib" "rmdbfcdx.lib" "ct3comm.lib" crt.lib kernel32.lib user32.lib winspool.lib ole32.lib oleaut32.lib odbc32.lib odbccp32.lib uuid.lib wsock32.lib ws2_32.lib wininet.lib advapi32.lib shlwapi.lib msimg32.lib mpr.lib OleDlg.lib version.lib -out:"omiews.exe"<<<
+

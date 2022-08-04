@@ -1,0 +1,69 @@
+CINI = 
+C_OUTPUTFOLDER = 
+DEFFILE = 
+INCLUDEFOLDERS = D:\nwg\dsv\others\xhbws\include;D:\nwg\dsv\others\xhbws\include\openssl
+LAUTORUN = .F.
+LDEBUG = .F.
+LGUI = .F.
+LIBFOLDERS = 
+LMT = .F.
+LNOAUTOFWH = .F.
+LPRG_CLASSICDEBUG = .F.
+LPRG_DEBUG = .F.
+LUSEDLL = .F.
+MAPFILE = 
+MYC_FLAGS = -Ot  -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""
+MYDEFINES = 
+MYLINK_FLAGS = 
+MYPRG_FLAGS = -m -n -pOobjc32\ -q -gc0 -D"XMLSEC_CRYPTO_OPENSSL" -D"XMLSEC_CRYPTO=\"openssl\""
+MYRC_FLAGS = 
+MYSLY_FLAGS = 
+OUTPUTFOLDER = objc32
+PRG_OUTPUTFOLDER = 
+RC_OUTPUTFOLDER = 
+RUNARGUMENTS = 
+SLY_OUTPUTFOLDER = 
+STARTIN = 
+TARGETFOLDER = 
+
+[omiews.prg]
+MYC_FLAGS = 
+MYDEFINES = 
+MYPRG_FLAGS = 
+
+[D:\nwg\dsv\others\xhbws\source\client.prg]
+MYC_FLAGS = 
+MYDEFINES = 
+MYPRG_FLAGS = 
+
+[D:\nwg\dsv\others\xhbws\source\httpcln.prg]
+MYC_FLAGS = 
+MYDEFINES = 
+MYPRG_FLAGS = 
+
+[D:\nwg\dsv\others\xhbws\source\url.prg]
+MYC_FLAGS = 
+MYDEFINES = 
+MYPRG_FLAGS = 
+
+[D:\nwg\dsv\others\xhbws\source\inetssl.c]
+MYC_FLAGS = 
+MYDEFINES = 
+
+[D:\nwg\dsv\others\xhbws\source\sign.c]
+MYC_FLAGS = 
+MYDEFINES = 
+
+[D:\nwg\dsv\others\xhbws\lib\libeay32.lib]
+
+[D:\nwg\dsv\others\xhbws\lib\libxml2.lib]
+
+[D:\nwg\dsv\others\xhbws\lib\libxmlsec.lib]
+
+[D:\nwg\dsv\others\xhbws\lib\libxmlsec-mscrypto.lib]
+
+[D:\nwg\dsv\others\xhbws\lib\libxmlsec-openssl.lib]
+
+[D:\nwg\dsv\others\xhbws\lib\libxslt.lib]
+
+[D:\nwg\dsv\others\xhbws\lib\ssleay32.lib]

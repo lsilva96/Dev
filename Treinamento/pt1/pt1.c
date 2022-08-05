@@ -2,7 +2,7 @@
  * xHarbour build 1.2.1 Intl. (SimpLex) (Rev. 9438)
  * Generated C source code from <pt1.prg>
  * Command: -opt1.c -m -n -p -q -gc0 -IC:\Omie\xHB\include -IC:\Omie\xHB\include\w32 pt1.prg 
- * Created: 2022.08.05 16:50:00 (XCC ISO C Compiler 2.70)
+ * Created: 2022.08.05 17:01:38 (XCC ISO C Compiler 2.70)
  */
 
 #include "hbvmpub.h"
@@ -37,8 +37,7 @@ HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_PT1 )
 { "STR", {HB_FS_PUBLIC}, {HB_FUNCNAME( STR )}, NULL },
 { "LEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( LEN )}, NULL },
 { "CACANOME", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( CACANOME )}, &ModuleFakeDyn },
-{ "ASCAN", {HB_FS_PUBLIC}, {HB_FUNCNAME( ASCAN )}, NULL },
-{ "NPOS", {HB_FS_PUBLIC}, {NULL}, NULL }
+{ "ASCAN", {HB_FS_PUBLIC}, {HB_FUNCNAME( ASCAN )}, NULL }
 HB_INIT_SYMBOLS_END( hb_vm_SymbolInit_PT1 )
 
 #if defined( HB_PRAGMA_STARTUP )
@@ -52,7 +51,7 @@ HB_FUNC( MAIN )
 {
    static const BYTE pcode[] =
    {
-	133,12,0,108,1,100,20,0,134,1,108,2,100,20,
+	133,11,0,108,1,100,20,0,134,1,108,2,100,20,
 	0,134,3,100,110,7
    };
 
@@ -63,7 +62,7 @@ HB_FUNC( CODEBLOCK )
 {
    static const BYTE pcode[] =
    {
-	13,1,0,133,22,0,100,80,1,134,2,89,13,0,
+	13,1,0,133,21,0,100,80,1,134,2,89,13,0,
 	2,0,0,0,95,1,95,2,72,6,80,1,134,4,
 	108,3,100,106,23,82,101,115,117,108,116,97,100,111,
 	32,100,111,32,67,111,100,101,66,108,111,99,107,0,
@@ -78,7 +77,7 @@ HB_FUNC( ARRAYS )
 {
    static const BYTE pcode[] =
    {
-	13,3,0,133,37,0,126,1,0,0,134,1,126,2,
+	13,3,0,133,35,0,126,1,0,0,134,1,126,2,
 	10,0,134,2,92,12,92,25,92,26,92,30,92,31,
 	4,5,0,80,3,134,6,106,5,74,111,104,110,0,
 	92,12,4,2,0,106,5,77,97,114,99,0,92,25,
@@ -104,11 +103,12 @@ HB_FUNC( CACANOME )
 {
    static const BYTE pcode[] =
    {
-	13,1,1,133,59,0,127,2,1,0,0,134,2,108,
-	10,100,109,5,0,89,18,0,1,0,1,0,1,0,
-	95,1,92,2,1,95,255,8,6,12,2,83,11,0,
-	134,4,109,11,0,121,15,28,15,134,5,98,5,0,
-	109,11,0,1,122,1,80,2,134,8,95,2,110,7
+	13,2,1,133,57,0,127,2,1,0,0,134,1,126,
+	3,0,0,134,3,108,10,100,109,5,0,89,18,0,
+	1,0,1,0,1,0,95,1,92,2,1,95,255,8,
+	6,12,2,80,3,134,5,95,3,121,15,28,14,134,
+	6,98,5,0,95,3,1,122,1,80,2,134,9,95,
+	2,110,7
    };
 
    hb_vmExecute( pcode, symbols );

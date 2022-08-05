@@ -1,4 +1,4 @@
-#line 10 "pt1.prg"
+#line 9 "pt1.prg"
 Function Main()
 
    CodeBlock()
@@ -19,7 +19,6 @@ Function CodeBlock()
    QOut( Eval(bBloco, 1, 2) )
 
 Return nil
-
 
 
 
@@ -49,6 +48,7 @@ Return nil
 Function CacaNome(nIdade)
 
    Local cNome    := ""
+   Local nPos     := 0
 
    nPos := AScan( aUsers, {| x | (x[2]) == nIdade } )
 

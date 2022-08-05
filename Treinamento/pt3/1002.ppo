@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+function Main()
+
+   Public aInputs := {2.00, 100.64, 150.00}
+
+   AreaDoCirculo()
+
+Return
+
+
+
+
+
+Function AreaDoCirculo()
+
+   Local nPII  := 3.14159
+   Local n1    := 0
+
+   For n1 := 1 to Len(aInputs)
+      QOut( "A=" + Str(Round(nPII*(aInputs[n1]*2),4)) )
+   next
+
+Return

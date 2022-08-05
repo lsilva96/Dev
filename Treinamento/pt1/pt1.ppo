@@ -1,0 +1,59 @@
+#line 10 "pt1.prg"
+Function Main()
+
+   CodeBlock()
+   Arrays()
+
+Return Nil
+
+
+
+
+Function CodeBlock()
+
+   Local bBloco := NIL
+
+   bBloco := { |nX, nY| nX + nY }
+
+   QOut( "Resultado do CodeBlock" )
+   QOut( Eval(bBloco, 1, 2) )
+
+Return nil
+
+
+
+
+
+Function Arrays()
+
+   Local nX      := 0
+   Local nLin    := 10
+   Local aIdades := {12, 25, 26, 30, 31}
+
+
+
+   Public aUsers  := {{"John", 12}, {"Marc", 25}, {"Bill", 30}}
+
+   QOut( "Qtde de registros no Array...... " + Str(Len(aIdades)) )
+
+   For nX := 1 to Len(aUsers)
+      QOut( aIdades[nX] )
+      QOut( "Nome encontrato pelo AScan: " + CacaNome(aIdades[nX]) )
+   next
+
+Return nil
+
+
+
+
+Function CacaNome(nIdade)
+
+   Local cNome    := ""
+
+   nPos := AScan( aUsers, {| x | (x[2]) == nIdade } )
+
+   If nPos > 0
+      cNome := aUsers[nPos][1]
+   Endif
+
+Return cNome

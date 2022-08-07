@@ -1,9 +1,4 @@
-from flask import Flask
-app = Flask(__name__)
+import requests 
 
-@app.route("/teste")
-def index():
-	return 'Olá Mundo!'
-
-if __name__ == "__main__":
-	app.run()
+r = requests.get("https://parallelum.com.br/fipe/api/v1/carros/marcas")    
+r.text

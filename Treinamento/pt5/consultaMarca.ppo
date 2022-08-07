@@ -1,0 +1,31 @@
+
+
+Function Main()
+   LOCAL oHttp, cHtml, hQuery
+
+   oHttp:= TIpClientHttp():new( "http://parallelum.com.br/fipe/api/v1/carros/marcas" )
+
+
+   hQUery := Hash()
+   hSetCaseMatch( hQuery, .F. )
+
+   hQuery["q"]    := "xHarbour"
+   hQuery["hl"]   := "en"
+   hQuery["btnG"] := "Google+Search"
+
+
+
+
+
+   IF oHttp:open()
+
+      cHtml   := oHttp:readAll()
+
+
+      oHttp:close()
+      QOut( cHtml )
+   ELSE
+      QOut( "Connection error:", oHttp:lastErrorMessage() )
+   ENDIF
+
+Return

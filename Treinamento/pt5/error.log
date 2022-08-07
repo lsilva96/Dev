@@ -1,0 +1,131 @@
+----------------------------- xHarbour Error Log ------------------------------
+
+Date...............: 08/06/22
+Time...............: 23:47:52
+
+Application name...: _consultamarca.exe
+Workstation name...: SP-22825
+Available memory...: 2097151
+Current disk.......: C
+Current directory..: Omie\Dev\Treinamento\pt5
+Free disk space....: 172001820672
+
+Operating system...: Windows NT Professional 6.02.9200
+xHarbour version...: xHarbour build 1.2.1 Intl. (SimpLex) (Rev. 9438)
+xHarbour built on..: Apr 16 2012 16:58:11
+C/C++ compiler.....: XCC ISO C Compiler 2.70
+Multi Threading....: NO
+VM Optimization....: 2
+
+Current Area ......:1
+
+-------------------------- Environmental Information --------------------------
+
+SET ALTERNATE......: OFF
+SET ALTFILE........: 
+SET AUTOPEN........: ON
+SET AUTORDER.......: 0
+SET AUTOSHARE......: 0
+SET BACKGROUNDTASKS: OFF
+SET BACKGROUNDTICK.: 1000
+SET BELL...........: OFF
+SET BLINK..........: .T.
+SET CANCEL.........: ON
+SET CENTURY........: OFF
+SET COLOR..........: W/N,N/W,N/N,N/N,N/W
+SET CONFIRM........: OFF
+SET CONSOLE........: ON
+SET COUNT..........: 0
+SET CURSOR.........: 1
+SET DATE FORMAT....: MM/DD/YY
+SET DBFLOCKSCHEME..: 0
+SET DEBUG..........: OFF
+SET DECIMALS.......: 2
+SET DEFAULT........: 
+SET DEFEXTENSIONS..: ON
+SET DELETED........: OFF
+SET DELIMCHARS.....: ::
+SET DELIMETERS.....: OFF
+SET DEVICE.........: SCREEN
+SET DIRCASE........: 0
+SET DIRSEPARATOR...: \
+SET EOL............: 13
+SET EPOCH..........: 1900
+SET ERRORLOG.......: ERROR.LOG,.F.
+SET ERRORLOOP......: 8
+SET ESCAPE.........: ON
+SET EVENTMASK......: 128
+SET EXACT..........: OFF
+SET EXCLUSIVE......: ON
+SET EXIT...........: OFF
+SET EXTRA..........: OFF
+SET EXTRAFILE......: 
+SET FILECASE.......: 0
+SET FIXED..........: OFF
+SET FORCEOPT.......: OFF
+SET HARDCOMMIT.....: ON
+SET IDLEREPEAT.....: ON
+SET INSERT.........: OFF
+SET INTENSITY......: ON
+SET LANGUAGE.......: EN
+SET MARGIN.........: 0
+SET MBLOCKSIZE.....: 0
+SET MCENTER........: OFF
+SET MESSAGE........: 0
+SET MFILEEXT.......: 
+SET OPTIMIZE.......: ON
+SET OUTPUTSAFETY...: ON
+SET PATH...........: 
+SET PRINTER........: OFF
+SET PRINTERJOB.....: 
+SET PRINTFILE......: PRN
+SET SCOREBOARD.....: ON
+SET SCROLLBREAK....: ON
+SET SOFTSEEK.......: OFF
+SET STRICTREAD.....: OFF
+SET TRACE..........: ON
+SET TRACEFILE......: TRACE.LOG
+SET TRACESTACK.....: 2
+SET TRIMFILENAME...: .F.
+SET TYPEAHEAD......: 50
+SET UNIQUE.........: OFF
+SET VIDEOMODE......: 0
+SET WRAP...........: OFF
+
+-------------------------------------------------------------------------------------------Detailed Work Area Items--------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------ Internal Error Handling Information  -------------------------------------------------------------------------------------
+
+Subsystem Call ....: BASE
+System Code .......: 1066
+Default Status ....: .F.
+Description .......: Argument error
+Operation .........: conditional
+Arguments .........:  [ 1] = Type: U
+Involved File .....: 
+Dos Error Code ....: 0
+
+ Trace Through:
+----------------
+TIPCLIENTHTTP:__DESTR :     102 in Module: C:\xHarbour\source\tip\httpcln.prg
+
+
+############################################################################################## Video Screen Dump ##############################################################################################
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                                                                                                |
+|C:\Omie\Dev\Treinamento\pt5>_consultamarca.exe                                                                                                                                                                  |
+|                                                                                                                                                                                                                |
+|Error BASE/1081  Operation not supported: TIPCLIENTHTTP:new() Arguments: ( [ 1] = Type: O Val: { TIPCLIENTHTTP Object } [ 2] = Type: C Val: https)                                                              |
+|                                                                                                                                                                                                                |
+|Error at ...: TIPCLIENT:NEW(188) in Module: C:\xHarbour\source\tip\client.prg                                                                                                                                   |
+|Called from : TIPCLIENTHTTP:NEW(112) in Module: C:\xHarbour\source\tip\httpcln.prg                                                                                                                              |
+|Called from : MAIN(6) in Module: consultaMarca.prg                                                                                                                                                              |
+|                                                                                                                                                                                                                |
+|Error BASE/1066  Argument error: conditional Arguments: ( [ 1] = Type: U)                                                                                                                                       |
+|                                                                                                                                                                                                                |
+|Error at ...: TIPCLIENTHTTP:__DESTRUCTOR(102) in Module: C:\xHarbour\source\tip\httpcln.prg                                                                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+

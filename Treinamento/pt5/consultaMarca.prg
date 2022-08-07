@@ -1,3 +1,9 @@
+/*
+Consumo de api com o TIPClientHttp
+
+dev. Lucas Ribeiro
+*/
+
 Function Main()
    LOCAL oHttp, cHtml, hQuery
 

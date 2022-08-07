@@ -5,7 +5,7 @@ dev. Lucas Ribeiro
 */
 
 Function Main()
-   LOCAL oHttp, cHtml, hQuery
+   LOCAL oHttp, cHtml
 
    oHttp:= TIpClientHttp():new( "http://parallelum.com.br/fipe/api/v1/carros/marcas" )
    
@@ -15,7 +15,7 @@ Function Main()
       oHttp:close()
       ? cHtml      
    ELSE
-      ? "Connection error:", oHttp:lastErrorMessage()
+      ? "erro de conexao:", oHttp:lastErrorMessage()
    ENDIF
 
 Return

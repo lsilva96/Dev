@@ -1,0 +1,9 @@
+
+Type: C >>>xhb.exe -o"api_correios.c" -m -n -p -q -gc0   -I"C:\Omie\xHB\include" -I"C:\Omie\xHB\include\w32" "api_correios.prg"<<<
+
+xHarbour Compiler build 1.2.1 (SimpLex) (Rev. 9438)
+Copyright 1999-2012, http://www.xharbour.org http://www.harbour-project.org/
+Generating object output to 'api_correios.obj'...
+
+Type: C >>>xlink.exe -NOEXPOBJ -MAP -FORCE:MULTIPLE  -NOIMPLIB -subsystem:console -LIBPATH:"C:\Omie\xHB\lib" -LIBPATH:"C:\Omie\xHB\c_lib" -LIBPATH:"C:\Omie\xHB\c_lib\win"  "api_correios.obj" "xhb.lib" "dbf.lib" "nsx.lib" "ntx.lib" "cdx.lib" "rmdbfcdx.lib" "ct3comm.lib" crt.lib kernel32.lib user32.lib winspool.lib ole32.lib oleaut32.lib odbc32.lib odbccp32.lib uuid.lib wsock32.lib ws2_32.lib wininet.lib advapi32.lib shlwapi.lib msimg32.lib mpr.lib OleDlg.lib version.lib -out:"teste.exe"<<<
+

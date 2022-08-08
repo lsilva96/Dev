@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+Function ConsCep()
+
+   Local cCep := ""
+
+   cCep := __Accept( " Informe o CEP : " )
+
+   cCep := StrTran(cCep,"-","")
+
+   If !Empty(cCep) .AND. Len(cCep) == 8
+      ConsultaCep(cCep)
+   else
+      QOut( "CEP Invalido!" )
+   Endif
+
+Return Nil
+
+
+
+
+
+
+Function ConsultaCep(cCep)
+
+   Local hHash := {=>}
+   Local oHttp, cHtml
+
+   oHttp:= TIpClientHttp():new( "http://viacep.com.br/ws/"+cCep+"/json/" )
+
+   IF oHttp:open()
+      cHtml   := oHttp:readAll()
+
+      HB_JsonDecode( cHtml , @hHash )
+
+      QOut( "----------RESULT----------" )
+      QOut( " O CEP enviado foi: " + hHash["cep"] )
+      QOut( " Corresponde ao Endereco : " + HB_AnsiToOem(hHash["logradouro"]) )
+      QOut( " Complemento : "     + If(Empty(hHash["complemento"]), HB_AnsiToOem("Não existe complemento cadastrado"), HB_AnsiToOem(hHash["complemento"])) )
+      QOut( " Bairro : "       + HB_AnsiToOem(hHash["bairro"]) )
+      QOut( " Cidade : "       + HB_AnsiToOem(hHash["localidade"]) )
+      QOut( " Estado : "       + hHash["uf"] )
+      QOut( " DDD : "          + hHash["ddd"] )
+      QOut( " Cod Ibge : "     + hHash["ibge"] )
+
+      oHttp:close()
+   ELSE
+      QOut( "houve erros na comunicacao com o servidor externo:", oHttp:lastErrorMessage() )
+   ENDIF
+
+Return

@@ -18,6 +18,13 @@ Function Main()
 
 Return
 
+/*
+Consumo de api
+- Exibe Marcas dos carros
+
+dev. Lucas Ribeiro
+*/
+
 Function Marcas()
    LOCAL oHttp, cHtml
    Local hHash := {=>}
@@ -44,6 +51,13 @@ Function Marcas()
    ENDIF
 
 Return
+
+/*
+Consumo de api
+- Exibe Modelos das Marcas dos carros
+
+dev. Lucas Ribeiro
+*/
 
 Function Modelos()
    Local oHttp, cHtml
@@ -78,6 +92,13 @@ Function Modelos()
 
 Return
 
+/*
+Consumo de api
+- Exibe Ano dos Modelos das Marcas dos carros
+
+dev. Lucas Ribeiro
+*/
+
 
 Function Anos()
    Local oHttp, cHtml
@@ -111,6 +132,14 @@ Function Anos()
    ENDIF
 
 Return
+
+/*
+Consumo de api
+- Exibe Dados do Ano do Modelo da Marca do carro escolhido kkk
+
+dev. Lucas Ribeiro
+*/
+
 
 Function Veiculos()
    Local oHttp, cHtml

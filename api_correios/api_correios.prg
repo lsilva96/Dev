@@ -1,47 +1,40 @@
-// Function ConsCep()
-
-//    Local cUrl  := "viacep.com.br/ws/"
-//    Local cType := "/xml/"
-//    Local aUrl  := {}
-
-//    Local cCep := "08572-730"
-
-// Return Nil
 
 
-// Function PesquisaCEP()
 
-//    local oHttp, cUrl, aResult
-//    local cCEP:= Space(13)
+Function ConsCep()
+
+   Local cCep := ""
+
+   ACCEPT " Informe o CEP : " TO cCep      
    
-//    MsgGet("Pesquisa CEP", "Informe o CEP", @cCep)
+   If !Empty(cCep)
+      ConsultaCep(cCep)
+   else
+      ? "CEP não preenchido!"
+   Endif
+
+Return Nil
+
+
+Function ConsultaCep(cCep)
+
+   Local cUrl  := "viacep.com.br/ws/"    
+   Local hHash := {=>}  
+   Local oHttp, cHtml
+
+   oHttp:= TIpClientHttp():new( "http://viacep.com.br/ws/"+cCep+"/json/" )
    
-//    if Empty(cCep)
-//        return nil
-//    endif
-       
-//    cUrl:= "http://viacep.com.br/ws/"+ cCep +"/json"
-   
-//    oHttp:= CreateObject( 'MSXML2.ServerXMLHTTP.6.0' )
-                            
-//    oHttp:Open( "GET", cUrl, .f. )
-//    oHttp:setRequestHeader('Content-Type'  , 'application/json')                
+   IF oHttp:open()      
+      cHtml   := oHttp:readAll()   
+      
+      HB_JsonDecode( cHtml , @hHash )
 
-//    oHttp:Send()
+      ? hHash['cep']
+                  
+      oHttp:close()
+      ? cHtml      
+   ELSE
+      ? "erro de conexao:", oHttp:lastErrorMessage()
+   ENDIF 
 
-//    IF oHttp:status != 200
-//        MsgStop( Alltrim(Str(oHttp:status)) +" - "+ oHttp:statusText , "Erro na requisição")
-//        RETURN NIL
-//    ENDIF    
-
-//    x :=  hb_jsondecode( oHttp:ResponseBody, @aResult )
-
-//    xbrowse(aResult, "Resultado")
-   
-// return nil
-
-
-Function Main()
-   ? "teste"
-Return nil
-
+Return

@@ -5,27 +5,145 @@
 
 
 Function Main()
+
+   Public cMarca
+   Public cVeiculo
+   Public cAno
+
+
+   Marcas()
+   Modelos()
+   Anos()
+   Veiculos()
+
+Return
+
+Function Marcas()
    LOCAL oHttp, cHtml
+   Local hHash := {=>}
 
    oHttp:= TIpClientHttp():new( "http://parallelum.com.br/fipe/api/v1/carros/marcas" )
 
    IF oHttp:open()
       cHtml   := oHttp:readAll()
 
-      aMarcas := {}
-      hMarcas := { => }
+      hb_jsonDecode(cHtml, @hHash )
 
-      HB_JsonEncode( cHtml, @aMarcas )
-      hMarcas["ITEMS"] := aMarcas
+      QOut( " " )
+      QOut( "----|CODIGO|-----|NOME|-----" )
+      QOut( " " )
+      For n1 := 1 To Len(hHash)
+         QOut( hHash[n1]["codigo"] + " - " + hHash[n1]["nome"] )
+      next
 
-      QOut( hMarcas["ITEMS"][1] )
-
-      QOut( aMarcas )
-
-
+      cMarca := __Accept( " Informe o Codigo da Marca que deseja consultar : " )
 
       oHttp:close()
+   ELSE
+      QOut( "erro de conexao:", oHttp:lastErrorMessage() )
+   ENDIF
+
+Return
+
+Function Modelos()
+   Local oHttp, cHtml
+   Local hHash := {=>}
+   Local n1    := 0
+
+   oHttp:= TIpClientHttp():new( "http://parallelum.com.br/fipe/api/v1/carros/marcas/"+cMarca+"/modelos" )
+
+   IF oHttp:open()
+      cHtml   := oHttp:readAll()
+
+      If !Empty(cHtml)
+
+         hb_jsonDecode(cHtml, @hHash )
+
+         QOut( " " )
+         QOut( "----|CODIGO|-----|NOME|-----" )
+         QOut( " " )
+         For n1 := 1 To Len(hHash)
+            QOut( Str(hHash["modelos"][n1]["codigo"])  + " - " + hHash["modelos"][n1]["nome"] )
+         next
+
+         cVeiculo := __Accept( " Informe o Codigo do Veiculo que deseja consultar : " )
+
+         oHttp:close()
+      else
+         QOut( " Parametros enviados incorretos " )
+      Endif
+   ELSE
+      QOut( "erro de conexao:", oHttp:lastErrorMessage() )
+   ENDIF
+
+Return
+
+
+Function Anos()
+   Local oHttp, cHtml
+   Local hHash := {=>}
+   Local n1    := 0
+
+   oHttp:= TIpClientHttp():new( "http://parallelum.com.br/fipe/api/v1/carros/marcas/"+cMarca+"/modelos/"+cVeiculo+"/anos" )
+
+   IF oHttp:open()
+      cHtml   := oHttp:readAll()
+
+      If !Empty(cHtml)
+         hb_jsonDecode(cHtml, @hHash )
+
+         QOut( " " )
+         QOut( "----|CODIGO|-----|NOME|-----" )
+         QOut( " " )
+         For n1 := 1 To Len(hHash)
+            QOut( Alltrim(hHash[n1]["codigo"])  + " - " + Alltrim(hHash[n1]["nome"]) )
+         next
+
+         cAno := __Accept( " Informe o Codigo do Ano do Veiculo que deseja consultar : " )
+
+         oHttp:close()
+
+      Else
+         QOut( " Parametros enviados incorretos " )
+      Endif
+   ELSE
+      QOut( "erro de conexao:", oHttp:lastErrorMessage() )
+   ENDIF
+
+Return
+
+Function Veiculos()
+   Local oHttp, cHtml
+   Local hHash := {=>}
+
+   oHttp:= TIpClientHttp():new( "http://parallelum.com.br/fipe/api/v1/carros/marcas/"+cMarca+"/modelos/"+cVeiculo+"/anos/"+cAno+"" )
+
+   IF oHttp:open()
+      cHtml   := oHttp:readAll()
+
       QOut( cHtml )
+
+      If !Empty(cHtml)
+
+         hb_jsonDecode(cHtml, @hHash )
+
+         QOut( " " )
+         QOut( "----DADOS DO VEICULO-----" )
+         QOut( " " )
+         QOut( "Valor: " + hHash["Valor"] )
+         QOut( "Marca: " + hHash["Marca"] )
+         QOut( "Modelo: " + hHash["Modelo"] )
+         QOut( "AnoModelo: " + Alltrim(Str(hHash["AnoModelo"])) )
+         QOut( "Combustivel: " + hHash["Combustivel"] )
+         QOut( "Cod Fipe: " + hHash["CodigoFipe"] )
+         QOut( "Mes Ref.: " + hHash["MesReferencia"] )
+         QOut( "Tipo Veiculo: " + Alltrim(Str(hHash["TipoVeiculo"])) )
+         QOut( "Sigla Combustivel: " + hHash["SiglaCombustivel"] )
+
+         oHttp:close()
+      Else
+         QOut( " Parametros enviados incorretos " )
+      Endif
    ELSE
       QOut( "erro de conexao:", oHttp:lastErrorMessage() )
    ENDIF

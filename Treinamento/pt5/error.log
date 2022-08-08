@@ -1,14 +1,14 @@
 ----------------------------- xHarbour Error Log ------------------------------
 
-Date...............: 08/06/22
-Time...............: 23:47:52
+Date...............: 08/07/22
+Time...............: 15:53:27
 
 Application name...: _consultamarca.exe
 Workstation name...: SP-22825
 Available memory...: 2097151
 Current disk.......: C
 Current directory..: Omie\Dev\Treinamento\pt5
-Free disk space....: 172001820672
+Free disk space....: 170705485824
 
 Operating system...: Windows NT Professional 6.02.9200
 xHarbour version...: xHarbour build 1.2.1 Intl. (SimpLex) (Rev. 9438)
@@ -98,34 +98,34 @@ SET WRAP...........: OFF
 ------------------------------------------------------------------------------------ Internal Error Handling Information  -------------------------------------------------------------------------------------
 
 Subsystem Call ....: BASE
-System Code .......: 1066
+System Code .......: 1132
 Default Status ....: .F.
-Description .......: Argument error
-Operation .........: conditional
-Arguments .........:  [ 1] = Type: U
+Description .......: Bound error
+Operation .........: array access
+Arguments .........:  [ 1] = Type: A Val: { Array of 0 Items } [ 2] = Type: N Val:          1
 Involved File .....: 
 Dos Error Code ....: 0
 
  Trace Through:
 ----------------
-TIPCLIENTHTTP:__DESTR :     102 in Module: C:\xHarbour\source\tip\httpcln.prg
+MAIN                  :      21 in Module: consultaMarca.prg
 
 
 ############################################################################################## Video Screen Dump ##############################################################################################
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|igo":"58"},{"nome":"VW - VolksWagen","codigo":"59"},{"nome":"Wake","codigo":"163"},{"nome":"Walk","codigo":"120"}]                                                                                              |
+|C:\Omie\Dev\Treinamento\pt5>_consultamarca.exe                                                                                                                                                                  |
+|                                                                                                                                                                                                                |
+|Error BASE/1132  Bound error: array access Arguments: ( [ 1] = Type: A Val: { Array of 0 Items } [ 2] = Type: N Val:          1)                                                                                |
+|                                                                                                                                                                                                                |
+|Error at ...: MAIN(21) in Module: consultaMarca.prg                                                                                                                                                             |
 |                                                                                                                                                                                                                |
 |C:\Omie\Dev\Treinamento\pt5>_consultamarca.exe                                                                                                                                                                  |
 |                                                                                                                                                                                                                |
-|Error BASE/1081  Operation not supported: TIPCLIENTHTTP:new() Arguments: ( [ 1] = Type: O Val: { TIPCLIENTHTTP Object } [ 2] = Type: C Val: https)                                                              |
+|Error BASE/1132  Bound error: array access Arguments: ( [ 1] = Type: A Val: { Array of 0 Items } [ 2] = Type: N Val:          1)                                                                                |
 |                                                                                                                                                                                                                |
-|Error at ...: TIPCLIENT:NEW(188) in Module: C:\xHarbour\source\tip\client.prg                                                                                                                                   |
-|Called from : TIPCLIENTHTTP:NEW(112) in Module: C:\xHarbour\source\tip\httpcln.prg                                                                                                                              |
-|Called from : MAIN(6) in Module: consultaMarca.prg                                                                                                                                                              |
-|                                                                                                                                                                                                                |
-|Error BASE/1066  Argument error: conditional Arguments: ( [ 1] = Type: U)                                                                                                                                       |
-|                                                                                                                                                                                                                |
-|Error at ...: TIPCLIENTHTTP:__DESTRUCTOR(102) in Module: C:\xHarbour\source\tip\httpcln.prg                                                                                                                     |
+|Error at ...: MAIN(21) in Module: consultaMarca.prg                                                                                                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 

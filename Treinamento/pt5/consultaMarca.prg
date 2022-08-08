@@ -11,7 +11,7 @@ Function Main()
    
    IF oHttp:open()      
       cHtml   := oHttp:readAll()      
-
+                  
       oHttp:close()
       ? cHtml      
    ELSE
